@@ -1,4 +1,4 @@
-const DosenRepository = require("..//repository/dosenRepository");
+const DosenRepository = require("../repository/dosenRepository");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -26,6 +26,14 @@ class DosenService {
       expiresIn: "1h",
     });
     return { token };
+  }
+
+  async getUser(username) {
+    const user = await DosenRepository.findUserByUsername(username);
+    if (!user) {
+      throw new Error("User not found");
+    }
+    return user;
   }
 }
 

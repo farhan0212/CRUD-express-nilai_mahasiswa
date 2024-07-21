@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 class DosenRepository {
   async findUserByUsername(username) {
-    return prisma.dosen.findUnique({ where: { username } });
+    return prisma.dosen.findUnique({ where: username });
   }
 
   async createUser(data) {

@@ -1,9 +1,6 @@
 const express = require("express");
 const { PrismaClient } = require("@prisma/client");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
-const jsonwebtoken = require("jsonwebtoken");
 const mahasiswaRoutes = require("./src/routes/MahasiswaRoutes");
 const dosenRoutes = require("./src/routes/DosenRoutes");
 

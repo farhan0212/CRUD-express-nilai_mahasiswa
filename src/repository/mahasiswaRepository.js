@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 class MahasiswaRepository {
   async findUserByUsername(username) {
-    return prisma.mahasiswa.findUnique({ where: { username } });
+    return prisma.mahasiswa.findUnique({ where: username });
   }
 
   async createUser(data) {
